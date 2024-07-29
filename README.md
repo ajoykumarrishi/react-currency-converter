@@ -41,7 +41,3 @@ A live demo of the application can be found [here](https://ajoykumarrishi.github
 2. Enter the amount in the base currency.
 3. Select the target currency from the dropdown.
 4. The converted amount will be displayed in the target currency field.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
