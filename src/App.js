@@ -1,11 +1,12 @@
+import React, { useState, useEffect } from "react";
 import {
   fetchExchangeRate,
   fetchCurrencyCodes,
 } from "./services/exchangeRateApi";
-import { useState, useEffect } from "react";
 import CurrencySelectorComponent from "./components/currency-selector-component";
 import CurrencyInputComponent from "./components/currency-input-component";
 import CurrencyOutputComponent from "./components/currency-output-component";
+import "./App.css";
 
 function App() {
   const [exchangeRate, setExchangeRate] = useState(0);
@@ -27,7 +28,7 @@ function App() {
       }
     }
     fetchData();
-  }, []); 
+  }, []);
 
   // Fetch exchange rate whenever selected currencies or base value change
   useEffect(() => {
@@ -72,36 +73,53 @@ function App() {
     }
   }
 
-  return (
-    <div className="App">
-      <h1>
-        Exchange Rate: {exchangeRate}
-      </h1>
-
-      <div>
-        <CurrencySelectorComponent
-          codes={currencyCodes}
-          selectedCurrency={selectedBaseCurrency}
-          onChange={handleBaseCurrencyChange}
-          label="Base Currency"
-        />
-        <CurrencyInputComponent
-          value={baseCurrencyValue}
-          onChange={(e) => handleBaseCurrencyValueChange(e.target.value)}
-        />
-      </div>
-
-      <div>
-        <CurrencySelectorComponent
-          codes={currencyCodes}
-          selectedCurrency={selectedTargetCurrency}
-          onChange={handleTargetCurrencyChange}
-          label="Target Currency"
-        />
-        <CurrencyOutputComponent
-          currency={selectedTargetCurrency}
-          value={targetCurrencyValue}
-        />
+return (
+    <div className="container py-5">
+      <div className="row justify-content-center">
+        <div className="col-md-10">
+          <div className="card shadow-sm">
+            <div className="card-body">
+              <h1 className="card-title text-center mb-4">Currency Converter</h1>
+              <div className="exchange-rate-display text-center mb-4">
+                <h5 className="mb-2">Current Exchange Rate</h5>
+                <div className="display-4 text-primary">{exchangeRate.toFixed(4)}</div>
+              </div>
+              <div className="row g-3">
+                <div className="col-md-6">
+                  <div className="currency-input-group">
+                    <label htmlFor="baseCurrency" className="form-label">Base Currency</label>
+                    <div className="input-group">
+                      <CurrencySelectorComponent
+                        codes={currencyCodes}
+                        selectedCurrency={selectedBaseCurrency}
+                        onChange={handleBaseCurrencyChange}
+                      />
+                      <CurrencyInputComponent
+                        value={baseCurrencyValue}
+                        onChange={(e) => handleBaseCurrencyValueChange(e.target.value)}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="currency-output-group">
+                    <label htmlFor="targetCurrency" className="form-label">Target Currency</label>
+                    <div className="input-group">
+                      <CurrencySelectorComponent
+                        codes={currencyCodes}
+                        selectedCurrency={selectedTargetCurrency}
+                        onChange={handleTargetCurrencyChange}
+                      />
+                      <CurrencyOutputComponent
+                        value={targetCurrencyValue}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

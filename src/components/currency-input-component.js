@@ -1,3 +1,4 @@
+// CurrencyInputComponent.js
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
@@ -8,18 +9,17 @@ function CurrencyInputComponent({ value, onChange }) {
     if (value !== inputValue) {
       setInputValue(value);
     }
-  }, [value, inputValue]); 
+  }, [value, inputValue]);
 
   return (
-    <div>
-      <input
-        id="currencyInput"
-        type="number"
-        value={inputValue}
-        onChange={onChange}
-        defaultValue = {1}
-      />
-    </div>
+    <input
+      id="currencyInput"
+      type="number"
+      className="form-control"
+      value={inputValue}
+      onChange={onChange}
+      defaultValue={1}
+    />
   );
 }
 
