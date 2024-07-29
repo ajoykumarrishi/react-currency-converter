@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function CurrencySelectorComponent({ codes, selectedCurrency, onChange }) {
   return (
     <select name="currency" value={selectedCurrency} onChange={onChange}>
@@ -12,6 +14,12 @@ function CurrencySelectorComponent({ codes, selectedCurrency, onChange }) {
       )}
     </select>
   );
+}
+
+CurrencySelectorComponent.propTypes = {
+  codes: PropTypes.arrayOf(PropTypes.array).isRequired,
+  selectedCurrency: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 }
 
 export default CurrencySelectorComponent;
