@@ -1,12 +1,16 @@
+// CurrencyOutputComponent.js
 import React from 'react';
 import PropTypes from 'prop-types';
 
 function CurrencyOutputComponent({ value }) {
-  console.log(value);
   return (
-    <div>
-      <input type="number" value={value.toFixed(2)} readOnly aria-readonly="true" /> 
-    </div>
+    <input
+      type="text"
+      className="form-control"
+      value={value.toFixed(2)}
+      readOnly
+      aria-readonly="true"
+    />
   );
 }
 

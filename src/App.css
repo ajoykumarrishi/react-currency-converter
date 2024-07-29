@@ -1,0 +1,65 @@
+/* App.css */
+.card {
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.exchange-rate-display {
+  background-color: #e6f3ff;
+  border-radius: 10px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.exchange-rate-display:hover {
+  background-color: #d1e8ff;
+}
+
+.display-4 {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.currency-input-group,
+.currency-output-group {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.currency-input-group:hover,
+.currency-output-group:hover {
+  background-color: #e9ecef;
+}
+
+.form-control,
+.form-select {
+  border-radius: 8px;
+}
+
+/* Animation for currency value changes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+  animation: pulse 0.5s ease-in-out;
+}
