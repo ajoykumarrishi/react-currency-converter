@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-currency-converter/static/css/main.3ddd424a.css",
+    "main.js": "/react-currency-converter/static/js/main.84520634.js",
+    "index.html": "/react-currency-converter/index.html",
+    "main.3ddd424a.css.map": "/react-currency-converter/static/css/main.3ddd424a.css.map",
+    "main.84520634.js.map": "/react-currency-converter/static/js/main.84520634.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3ddd424a.css",
+    "static/js/main.84520634.js"
+  ]
+}
